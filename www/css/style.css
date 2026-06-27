@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&family=Inter:wght@400;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: #0d0d0d;
+    color: #ddd;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 80px 20px 60px;
+}
+
+h1 {
+    font-family: 'Paytone One', sans-serif;
+    font-size: clamp(60px, 12vw, 100px);
+    color: #E50914;
+    letter-spacing: .04em;
+}
+
+.tagline {
+    color: #aaa;
+    font-size: clamp(15px, 2vw, 20px);
+    margin-top: 12px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 40px 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 28px 24px;
+    width: 220px;
+    text-align: center;
+    transition: transform .2s;
+}
+.feature-card:hover { transform: translateY(-4px); }
+.feature-icon { font-size: 36px; margin-bottom: 10px; }
+.feature-card h3 { color: #fff; font-size: 17px; margin-bottom: 8px; }
+.feature-card p  { color: #888; font-size: 13px; }
+
+.install {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 40px 60px;
+}
+.install h2 {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.install ol {
+    color: #ccc;
+    padding-left: 20px;
+    font-size: 15px;
+    line-height: 2;
+}
+.install code {
+    background: #2a2a2a;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 13px;
+    color: #E50914;
+}
+
+.badges {
+    margin-top: 30px;
+    text-align: center;
+}
+.badges a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 15px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+.badges a:hover { color: #fff; background: #222; }
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #555;
+    font-size: 13px;
+    border-top: 1px solid #222;
+}
+footer strong { color: #888; }

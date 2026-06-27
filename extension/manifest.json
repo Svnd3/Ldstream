@@ -1,0 +1,45 @@
+{
+    "name": "Ldstream",
+    "description": "Watch Netflix, YouTube, Disney+, Prime Video and Hulu with friends — synced.",
+    "version": "2.0",
+    "manifest_version": 3,
+    "permissions": ["storage", "tabs", "activeTab", "badges"],
+    "host_permissions": [
+        "https://www.netflix.com/*",
+        "https://www.youtube.com/*",
+        "https://www.disneyplus.com/*",
+        "https://www.primevideo.com/*",
+        "https://www.amazon.com/*",
+        "https://www.hulu.com/*",
+        "wss://YOUR_SERVER_DOMAIN_HERE/*"
+    ],
+    "action": {
+        "default_popup": "html/popup.html",
+        "default_icon": "img/icon.png",
+        "default_badge_text": ""
+    },
+    "icons": {
+        "16":  "img/icon.png",
+        "48":  "img/icon.png",
+        "128": "img/icon.png"
+    },
+    "background": {
+        "service_worker": "js/background.js"
+    },
+    "content_scripts": [{
+        "matches": [
+            "https://www.netflix.com/watch/*",
+            "https://www.youtube.com/watch*",
+            "https://www.disneyplus.com/*",
+            "https://www.primevideo.com/*",
+            "https://www.amazon.com/gp/video/*",
+            "https://www.hulu.com/watch/*"
+        ],
+        "js": ["js/ldstream-interface.js"],
+        "run_at": "document_idle"
+    }],
+    "web_accessible_resources": [{
+        "resources": ["img/*.png", "js/*.js", "css/*.css", "html/*.html"],
+        "matches": ["<all_urls>"]
+    }]
+}

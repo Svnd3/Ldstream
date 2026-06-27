@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ldstream — Create Room</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h2>Ldstream</h2>
+    <p id="subtitle">Create a room!</p>
+    <p id="message" style="display:none;"></p>
+    <p>Pick a room colour</p>
+    <input type="color" value="#E50914" id="room-colour-picker">
+    <p style="margin-top:12px;">Room password <span style="color:#666;font-size:11px;">(optional)</span></p>
+    <input type="password" id="room-password" placeholder="Leave blank for no password" style="
+        width:80%; box-sizing:border-box; margin:0 auto; display:block;
+        background:#1a1a1a; border:none; border-bottom:2px solid #555;
+        color:#fff; font-size:13px; padding:6px; outline:none; text-align:center;
+    ">
+    <p></p>
+    <button class="button" id="create-button"><p class="button-text">Create Room</p></button>
+</body>
+<script src="../js/createroom.js"></script>
+</html>
