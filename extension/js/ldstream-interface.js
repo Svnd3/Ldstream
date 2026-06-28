@@ -781,7 +781,7 @@ function LdstreamEmbeddedSource() {
     // ─── Init ─────────────────────────────────────────────────────────────────────
     function init() {
         const url = new URL(location.href);
-        G.ROOM_ID = url.searchParams.get("roomID");
+        G.ROOM_ID = url.searchParams.get("roomID") || sessionStorage.getItem("lds_room_id");
         if (!G.ROOM_ID) return;
 
         G.GATEWAY = new WebSocket("wss://" + RESOURCE_URL + "/gateway");
@@ -811,8 +811,10 @@ window.addEventListener("message", e => {
     }
 });
 
-const _url = new URL(location.href);
-if (_url.searchParams.has("roomID")) {
+const _roomID = new URLSearchParams(location.search).get("roomID")
+              || sessionStorage.getItem("lds_room_id");
+
+if (_roomID) {
     const script = document.createElement("script");
     script.text = `(${LdstreamEmbeddedSource.toString()})();`;
     document.documentElement.appendChild(script);
