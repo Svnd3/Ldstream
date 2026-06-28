@@ -5,7 +5,7 @@ function LdstreamEmbeddedSource() {
     "use strict";
 
     // ─── Constants ──────────────────────────────────────────────────────────────
-    const RESOURCE_URL = "YOUR_SERVER_DOMAIN_HERE"; // no protocol, just domain
+    const RESOURCE_URL = "web-production-26f3e.up.railway.app"; // no protocol, just domain
 
     const EMOJIS = ["👍", "❤️", "😂", "😮", "😢", "😡", "🔥", "👏", "🎉", "💀"];
 

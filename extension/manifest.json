@@ -11,7 +11,7 @@
         "https://www.primevideo.com/*",
         "https://www.amazon.com/*",
         "https://www.hulu.com/*",
-        "wss://YOUR_SERVER_DOMAIN_HERE/*"
+        "wss://web-production-26f3e.up.railway.app/*"
     ],
     "action": {
         "default_popup": "html/popup.html",

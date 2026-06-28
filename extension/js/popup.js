@@ -1,4 +1,4 @@
-const RESOURCE_URL = "YOUR_SERVER_DOMAIN_HERE";
+const RESOURCE_URL = "web-production-26f3e.up.railway.app";
 
 const SUPPORTED_HOSTS = {
     "www.netflix.com":   "Netflix",
