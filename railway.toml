@@ -1,0 +1,7 @@
+[build]
+builder = "nixpacks"
+buildCommand = "mvn package -DskipTests"
+
+[deploy]
+startCommand = "java -jar target/Ldstream-2.0.0.jar"
+restartPolicyType = "on_failure"
