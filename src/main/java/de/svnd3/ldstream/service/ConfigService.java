@@ -34,7 +34,12 @@ public class ConfigService {
     public String  getDBUser()           { return config.getProperty("hibernate.User",          "sa"); }
     public String  getDBPassword()       { return config.getProperty("hibernate.Password",      "password"); }
     public String  getConnectionURL()    { return config.getProperty("hibernate.ConnectionURL", "jdbc:h2:mem:Ldstream"); }
-    public String  getHttpPort()         { return config.getProperty("http.port",               "6969"); }
+    public String  getHttpPort()         {
+        // Railway (and most PaaS) injects PORT env var — must use it or the app crashes
+        String envPort = System.getenv("PORT");
+        if (envPort != null && !envPort.isEmpty()) return envPort;
+        return config.getProperty("http.port", "6969");
+    }
     public boolean textCacheEnabled()    { return Boolean.parseBoolean(config.getProperty("cache.TextIsEnabled",   "true")); }
     public boolean binaryCacheEnabled()  { return Boolean.parseBoolean(config.getProperty("cache.BinaryIsEnabled", "true")); }
 }
