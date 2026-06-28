@@ -815,8 +815,15 @@ const _roomID = new URLSearchParams(location.search).get("roomID")
               || sessionStorage.getItem("lds_room_id");
 
 if (_roomID) {
-    const script = document.createElement("script");
-    script.text = `(${LdstreamEmbeddedSource.toString()})();`;
-    document.documentElement.appendChild(script);
-    script.remove();
+    if (location.hostname.includes("netflix.com")) {
+        // Netflix needs page context to access window.netflix; Netflix's CSP allows this
+        const script = document.createElement("script");
+        script.text = `(${LdstreamEmbeddedSource.toString()})();`;
+        document.documentElement.appendChild(script);
+        script.remove();
+    } else {
+        // YouTube/Disney+/Prime/Hulu: run directly in content script context
+        // (avoids CSP violation — these platforms only need the <video> element)
+        LdstreamEmbeddedSource();
+    }
 }
