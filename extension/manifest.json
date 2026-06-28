@@ -3,7 +3,7 @@
     "description": "Watch Netflix, YouTube, Disney+, Prime Video and Hulu with friends — synced.",
     "version": "2.0",
     "manifest_version": 3,
-    "permissions": ["storage", "tabs", "activeTab", "badges"],
+    "permissions": ["storage", "tabs", "activeTab"],
     "host_permissions": [
         "https://www.netflix.com/*",
         "https://www.youtube.com/*",
